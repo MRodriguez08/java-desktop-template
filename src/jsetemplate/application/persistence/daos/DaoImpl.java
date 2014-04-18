@@ -17,16 +17,19 @@ public abstract class DaoImpl<K, E> implements Dao<K, E>{
     public DaoImpl() {
         ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
         this.entityClass = (Class<E>)genericSuperclass.getActualTypeArguments()[1];
-        this.session = HibernateUtil.getSessionFactory().getCurrentSession();
     }
 
     @Override
     public void flush() {
-        //em.flush();
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.flush();
+        session.getTransaction().commit();
     }
 
     @Override
     public void persist(E entity) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.getTransaction().begin();
         session.merge(entity);
         session.getTransaction().commit();
@@ -34,12 +37,15 @@ public abstract class DaoImpl<K, E> implements Dao<K, E>{
 
     @Override
     public void merge(E entity) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.getTransaction().begin();
-        session.save(entity);
+        session.merge(entity);
         session.getTransaction().commit();
     }
 
+    @Override
     public void remove(E entity) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.getTransaction().begin();
         session.merge(entity);
         session.getTransaction().commit();
@@ -47,6 +53,7 @@ public abstract class DaoImpl<K, E> implements Dao<K, E>{
 
     @Override
     public E findById(K id) {
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         E e =  (E) session.get(entityClass, (Serializable)id);
         session.getTransaction().commit();

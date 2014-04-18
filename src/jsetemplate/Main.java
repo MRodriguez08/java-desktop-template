@@ -11,9 +11,9 @@ import org.quartz.SchedulerException;
  *
  * @author mauricio
  */
-public class CertificAlert {
+public class Main {
 
-    private static final Logger logger = Logger.getLogger(CertificAlert.class);
+    private static final Logger logger = Logger.getLogger(Main.class);
     
     public static void main(String[] args) {        
         
