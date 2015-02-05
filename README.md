@@ -36,9 +36,9 @@ I've decided to use Postgresql as rdbms, but of course you can choose anyone sup
 </hibernate-configuration>
 ```
 You should take special care in the following parameter:
-**hibernate.connection.url** : the database connection string (note that each rdbms has different connection string format and driver).
-**hibernate.connection.username** : user to connecto to the database.
-**connection.password** : password to connecto to the database.
-**hbm2ddl.auto** : Automatically validates or exports schema DDL to the database when the SessionFactory is created. In ohter words, if set to update will create the database in case the entities structure does not exists.
+* **hibernate.connection.url** : the database connection string (note that each rdbms has different connection string format and driver).
+* **hibernate.connection.username** : user to connecto to the database.
+* **connection.password** : password to connecto to the database.
+* **hbm2ddl.auto** : Automatically validates or exports schema DDL to the database when the SessionFactory is created. In ohter words, if set to update will create the database in case the entities structure does not exists.
 
 That would be all you need to setup to make this project works, so try to add some test data for the users and roles and run it.
