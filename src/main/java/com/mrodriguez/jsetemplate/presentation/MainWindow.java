@@ -32,14 +32,18 @@ import java.util.List;
 import javax.swing.JInternalFrame;
 import javax.swing.SwingConstants;
 
+import org.apache.log4j.Logger;
 import org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl;
 
 import com.mrodriguez.jsetemplate.business.BusinessFactory;
 import com.mrodriguez.jsetemplate.business.UserBusiness;
 import com.mrodriguez.jsetemplate.persistence.entities.UserEntity;
 import com.mrodriguez.jsetemplate.persistence.entities.UserRoleEntity;
+import com.mrodriguez.jsetemplate.presentation.app.About;
 
 public class MainWindow {
+	
+	private static Logger logger = Logger.getLogger(MainWindow.class);
 
 	private JFrame frame;
 	private JLabel lblWindowTitle;
@@ -56,7 +60,7 @@ public class MainWindow {
 					MainWindow window = new MainWindow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					logger.error(e.getMessage() , e);
 				}
 			}
 		});
@@ -90,6 +94,7 @@ public class MainWindow {
 			public void mouseReleased(MouseEvent e) {
 				frame.setVisible(false);
 				frame.dispose();
+				System.exit(0);
 			}
 		});
 		fileMenu.add(exitMenuEntry);
@@ -168,6 +173,7 @@ public class MainWindow {
 		
 		JScrollPane scrollPane = new JScrollPane(table);
 		table.setFillsViewportHeight(true);
+		table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 		
 		mainContentPanel.add(scrollPane);
 	}
