@@ -13,7 +13,6 @@ java-se-desktop-template is a management system for users and roles, so you'll h
 I've decided to use Postgresql as rdbms, but of course you can choose anyone supported by JPA (maybe you should change some implementation details like id generation, and connection string in config file). 
 
 ```xml
-es (19 sloc)  1.166 kb RawBlameHistory   
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
 "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
