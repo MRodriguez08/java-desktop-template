@@ -1,13 +1,9 @@
 java-se-desktop-template
 ========================
-This is a template application to develop a Java Standard Edtion Desktop app.
+This project is ment to be a start point to create a Java Standard Edition Desktop Application. For practical reasons, I'have tried to cover some of the most popular technologies such as JPA (with Hibernate implementation), Java Jobs (with Quartz) and Swing for GUI.
 
-### Directory structure
+This is the technologies stack used in this project:
 
-### Presentation layer
-
-### Business layer
-
-### Persistence layer
-
-### Backend processes
+* [Java 7 Swing for User Graphical Interface](http://docs.oracle.com/javase/8/docs/technotes/guides/swing/)
+* [Quarts Scheduler 2.2.1 for Chron Jobs](http://quartz-scheduler.org/)
+* [Hibernate JPA 4.3.1](http://hibernate.org/orm/)
