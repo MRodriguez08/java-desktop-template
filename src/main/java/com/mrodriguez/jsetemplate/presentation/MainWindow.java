@@ -40,6 +40,8 @@ import com.mrodriguez.jsetemplate.business.UserBusiness;
 import com.mrodriguez.jsetemplate.persistence.entities.UserEntity;
 import com.mrodriguez.jsetemplate.persistence.entities.UserRoleEntity;
 import com.mrodriguez.jsetemplate.presentation.app.About;
+import com.mrodriguez.jsetemplate.presentation.model.UserRoleTableModel;
+import com.mrodriguez.jsetemplate.presentation.model.UserTableModel;
 
 public class MainWindow {
 	
@@ -161,15 +163,9 @@ public class MainWindow {
 		mainContentPanel.removeAll();
 		
 		UserBusiness userBusiness = BusinessFactory.getUserBusiness();
-		List<UserEntity> users = userBusiness.findAll();
+		List<UserEntity> users = userBusiness.findAll();	
 		
-		String[] columnNames = {"Nick", "Name"};
-		Object[][] data = new Object[users.size()][2];
-		for (int i = 0; i < users.size(); i++){
-			data[i] = new Object[] {users.get(i).getUserId() , users.get(i).getName() };
-		}
-		
-		JTable table = new JTable(data,columnNames);
+		JTable table = new JTable(new UserTableModel(users));
 		
 		JScrollPane scrollPane = new JScrollPane(table);
 		table.setFillsViewportHeight(true);
@@ -188,15 +184,9 @@ public class MainWindow {
 		mainContentPanel.removeAll();
 		
 		UserBusiness userBusiness = BusinessFactory.getUserBusiness();
-		List<UserRoleEntity> roles = userBusiness.findAllRoles();
+		List<UserRoleEntity> roles = userBusiness.findAllRoles();	
 		
-		String[] columnNames = {"Nick", "Name"};
-		Object[][] data = new Object[roles.size()][2];
-		for (int i = 0; i < roles.size(); i++){
-			data[i] = new Object[] {roles.get(i).getId() , roles.get(i).getName() };
-		}
-		
-		JTable table = new JTable(data,columnNames);
+		JTable table = new JTable(new UserRoleTableModel(roles));
 		
 		JScrollPane scrollPane = new JScrollPane(table);
 		table.setFillsViewportHeight(true);
