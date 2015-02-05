@@ -1,4 +1,4 @@
-package com.mrodriguez.jsetemplate.presentation;
+package com.mrodriguez.jsetemplate.presentation.app;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
