@@ -1,7 +1,8 @@
 java-se-desktop-template
 ========================
 This project is ment to be a start point to create a Java Standard Edition Desktop Application. For practical reasons, I'have tried to cover some of the most popular technologies such as JPA (with Hibernate implementation), Java Jobs (with Quartz) and Swing for GUI.
-java-se-desktop-template is a management system for users and roles, so you'll have an Administration Dropdown, were you can select "Users" and "Roles" to open each window. This will simply display a list of users and users roles.
+
+**java-se-desktop-template** is a management system for users and roles, so you'll have an Administration Dropdown, were you can select "Users" and "Roles" to open each window. This will simply display a list of users and users roles.
 
 ### Technologies stack
 
