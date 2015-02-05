@@ -6,11 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
-import javax.swing.AbstractAction;
-
-import java.awt.event.ActionEvent;
-
-import javax.swing.Action;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -23,17 +18,11 @@ import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
-import javax.swing.BoxLayout;
-
-import java.awt.FlowLayout;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JInternalFrame;
 import javax.swing.SwingConstants;
 
 import org.apache.log4j.Logger;
-import org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl;
 
 import com.mrodriguez.jsetemplate.business.BusinessFactory;
 import com.mrodriguez.jsetemplate.business.UserBusiness;
@@ -42,6 +31,7 @@ import com.mrodriguez.jsetemplate.persistence.entities.UserRoleEntity;
 import com.mrodriguez.jsetemplate.presentation.app.About;
 import com.mrodriguez.jsetemplate.presentation.model.UserRoleTableModel;
 import com.mrodriguez.jsetemplate.presentation.model.UserTableModel;
+import com.mrodriguez.jsetemplate.procesos.JobManager;
 
 public class MainWindow {
 	
@@ -49,7 +39,6 @@ public class MainWindow {
 
 	private JFrame frame;
 	private JLabel lblWindowTitle;
-	private JPanel windowTitlePanel;
 	private JPanel mainContentPanel;
 
 	/**
@@ -59,6 +48,12 @@ public class MainWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
+					//first start the needed jobs...
+					JobManager.startJobs();
+					
+					
+					//and then start the GUI
 					MainWindow window = new MainWindow();
 					window.frame.setVisible(true);
 				} catch (Exception e) {

@@ -18,8 +18,8 @@ public class Job1 implements Job {
         
         
         
-        
-        logger.info("THIS IS JOB1 IN EXCECUTION");
+    	//you cant do whatever you want here!!
+        logger.info("Performing a very nice and important job 1!!!");
     }
     
 }

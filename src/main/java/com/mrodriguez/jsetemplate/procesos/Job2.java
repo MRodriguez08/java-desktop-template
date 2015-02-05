@@ -7,7 +7,7 @@ import org.quartz.JobExecutionException;
 
 /**
  *
- * @author ubuntu
+ * @author mrodriguez
  */
 public class Job2 implements Job {
     
@@ -18,8 +18,8 @@ public class Job2 implements Job {
         
         
         
-        
-        logger.info("THIS IS JOB2 IN EXCECUTION");
+        //you cant do whatever you want here!!
+    	logger.info("Performing a very nice and important job 2!!!");
     }
     
 }
