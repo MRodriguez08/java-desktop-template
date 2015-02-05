@@ -6,4 +6,4 @@ This is the technologies stack used in this project:
 
 * [Java 7 Swing for User Graphical Interface](http://docs.oracle.com/javase/8/docs/technotes/guides/swing/)
 * [Quarts Scheduler 2.2.1 for Chron Jobs](http://quartz-scheduler.org/)
-* [Hibernate JPA 4.3.1](http://hibernate.org/orm/)
+* [Hibernate JPA 4.3.1 for Object Relation Mapping](http://hibernate.org/orm/)
